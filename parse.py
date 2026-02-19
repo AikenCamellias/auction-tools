@@ -5,10 +5,14 @@ from rapidfuzz import process, fuzz
 import urllib.request
 import urllib.parse
 import traceback
+import os
 
 BASE_URL = 'https://www.atlanticcoastcamelliasociety.org/Camelliae%20Floris%20Bibliotheca/images/'
 BACKUP_BASE_URL = 'https://www.socalcamelliasociety.org/Camelliae%20Floris%20Bibliotheca/images/'
 FILE_PATH = 'images/'
+
+# Create images/ folder if it does not exist
+os.makedirs(FILE_PATH, exist_ok=True)
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Parse auction input file and match against camellia database')
@@ -28,7 +32,7 @@ def clean_name(name):
 search_names = [clean_name(line) for line in raw_lines]
 
 # Load database
-db = pd.read_excel('ACCS - 2026.xlsx')
+db = pd.read_excel('ACCS.xlsx')
 db_names = db['name'].dropna().tolist()
 
 # Fuzzy match each search name
