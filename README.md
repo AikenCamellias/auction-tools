@@ -20,7 +20,7 @@ uv is a python project manager used for this repo. Follow their installation ins
 This script takes an input list with Camellia varieties on each line as input. See list-example.txt for more info.
 
 ### Run the parser
-`uv run parse.py <input list>
+`uv run parse.py <input list>`
 `uv run parse.py list-example.txt`
 
 ## Output
