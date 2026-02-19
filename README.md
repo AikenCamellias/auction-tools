@@ -21,6 +21,8 @@ This script takes an input list with Camellia varieties on each line as input. S
 
 ### Run the parser
 `uv run parse.py <input list>`
+
+For example:
 `uv run parse.py list-example.txt`
 
 ## Output
